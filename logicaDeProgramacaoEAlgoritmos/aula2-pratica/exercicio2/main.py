@@ -7,4 +7,4 @@ custoDiario = diasAlugado * 60
 custoKmRodado = kmPercorrido * 0.15
 precoTotal = custoDiario + custoKmRodado
 
-print(precoTotal)
+print(f'O total ficou R${precoTotal}')
