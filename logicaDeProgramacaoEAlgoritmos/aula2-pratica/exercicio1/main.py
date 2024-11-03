@@ -4,4 +4,5 @@ percentualDesconto = float(input('Qual o percentual do desconto?'))
 valorDesconto =  precoProduto  * (percentualDesconto / 100)
 valorFinalProduto = precoProduto - valorDesconto
 
+print(f'O valor original era R${precoProduto}, ele está com desconto de {percentualDesconto}%')
 print(f'Você vai ter um desconto de R${valorDesconto}, ficando só R${valorFinalProduto}')
