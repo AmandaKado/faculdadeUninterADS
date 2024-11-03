@@ -8,4 +8,4 @@ print(meioIndice)
 metade = (palavra[0:meioIndice])
 print(metade)
 
-print(metade[1-meioIndice:meioIndice])
+print(metade[-2:])
