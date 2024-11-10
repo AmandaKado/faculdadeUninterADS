@@ -13,13 +13,13 @@ x = 0
 
 print('_' * 100)
 
-while( x < 10 ):
+while( x < 9 ):
     print(x)
     x += 1
     
 print('_' * 100)
 
-for i in range (0, 10, 1):
+for i in range (0, 9, 1):
     print(i)    
 
 print('_' * 100)
