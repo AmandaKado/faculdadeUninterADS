@@ -1,32 +1,33 @@
 """
-Realize a sequencia de print com for e while:
-a) Inteiros de 3 até 12, com 12 incluso
-b) Inteiros de 0 até 9, excluindo 9, com passo de 2 
+1-Escreva uma funcao que calcule o fatorial de um numero recebido como parametro e retorne o seu resultado
+
+2-Faca uma validacao dos dados por meio de uma outra funcao, permitidno que somente valores positivos sejam aceitos
+
+3-Crie o help da sua funcao
+
 """
 
-print('_' * 100)
+def valida_int(pergunta, min, max):
+    x = int(input(pergunta))
+    while((x < min) or (x > max)):
+        x = int(input( pergunta))
+    return x
 
-for i in range (3, 13, 1 ):
-    print(i)
-    
-x = 0
+def fatorial(num):
 
-print('_' * 100)
+    """
+    Função que calcula fatorial do número digitado
+    """
 
-while( x < 9 ):
-    print(x)
-    x += 1
-    
-print('_' * 100)
+    fat = 1
+    if num == 0:
+        return fat
+    # Essa parte só execura caso num > 0
+    for i in range(1, num + 1, 1):
+        fat *= i
+    return fat
 
-for i in range (0, 9, 1):
-    print(i)    
+x = valida_int('Digite o valor para calcular a fatorial: ', 0, 99999)
+print(f'{x}! = {fatorial(x)}')
 
-print('_' * 100)
-
-y = 3
-while(y <= 12):
-    print(y)
-    y += 1
-
-print('_' * 100)
+help(fatorial)
