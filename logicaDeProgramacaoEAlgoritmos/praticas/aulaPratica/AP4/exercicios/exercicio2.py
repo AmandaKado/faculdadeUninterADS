@@ -1,47 +1,87 @@
 """
-Escreva um algoritmo que mostra, na tela, quatro produtos a serem comprados em uma lanchonete:
-→ Coxinha - R$ 5.00
-→ Pastel - R$ 7.00
-→ Café - R$ 4.00
-→ Suco - R$ 6.00
+Suponha que voce é um colecionador de jogos de videograme. Escreva um algoritmo que permita cadastrar esses jogos informando o nome e a qual videogame ele pertence
 
-Faça um algoritmo em que voce seleciona o produto que quer comprar e quantidade. Faça isso até que decida encerrar o programa
+Para isso, crie um menu de opcoes contendo:
 
-Ao final mostre o valor final do pedido a ser pago
+cadastrar novo item
+listar tu do que foi cadastrado
+sair
 
-"""
+Para resolver esse exercicio, crie pelo menos uma funcao para cada item do menu
 
-print('LANCHONETE')
-
-print('1 → Coxinha R$ 5,00')
-print('2 → Pastel R$ 7,00')
-print('3 → Café R$ 4,00')
-print('4 → Suco R$ 6,00')
-print('5 → SAIR')
-
-total = 0
-while True:
-    op = int(input('Selecione o item desejado: '))
+Alem disso, armazene todos os dados em um arquivo de texto que deve ser salvo em disco e manter os dados cadastrados
+"""\
     
-    if(op == 1):
-        qtd = int(input('Quantidade(unid): '))
-        total += qtd * 5.00
-        
-    elif(op == 2):
-        qtd = int(input('Quantidade(unid): '))
-        total += qtd * 7.00
-        
-    elif(op == 3):
-        qtd = int(input('Quantidade(unid): '))
-        total += qtd * 4.00
-        
-    elif(op == 4):
-        qtd = int(input('Quantidade(unid): '))
-        total += qtd * 6.00
-        
-    elif(op == 5):
-        break
-    else:
-        print('Selecione um produto válido!')
+def valida_int(pergunta, min, max):
+    x = int(input(pergunta))
+    while((x < min) or (x > max)):
+        x = int(input( pergunta))
+    return x
 
-print(f'Total: R$ {total}')
+def existe_arquivo(nomeArquivo):
+    try:
+        a = open(nomeArquivo, 'rt')
+        a.close()
+    except FileNotFoundError:
+        return False
+    else: 
+        return True
+
+def criar_arquivo(nomeArquivo):
+    try:
+        a = open(nomeArquivo, 'wt+')
+        a.close()
+    except:
+        print('Erro na criação do arquivo')
+    else:
+        print(f'Arquivo {nomeArquivo} criado com sucesso!\n')
+
+
+def cadastrarJogo(nomeArquivo, nomeJogo, nomeVideogame):
+    try:
+        a = open(nomeArquivo, 'at')
+    except:
+        print('Erro ao abrir arquivo')
+    else:
+        a.write(f'{nomeJogo};{nomeVideogame}\n')
+    finally:
+        a.close()
+        
+def listarArquivo(nomeArquivo):
+    try:
+        a = open(nomeArquivo, 'rt')
+    except:
+        print('Erro ao ler o arquivo')
+    else: 
+        print(a.read())
+    finally:
+        a.close()
+
+# Programa principal
+
+arquivo = 'games.txt'
+if existe_arquivo(arquivo):
+    print('Arquivo localizado no computador.')
+else:
+    print('Arquivo inexistente.')
+    criar_arquivo(arquivo)
+
+while True:
+    print('MENU')
+    print('1 - Cadastrar um novo item')
+    print('2 - Listar os cadastros')
+    print('3 - sair')
+    
+    op = valida_int('Escolha a opção desejada: ', 1, 3)
+    if(op == 1): # Novo item
+        print('Opção de cadastrar novo item selecionada...')
+        nomeJogo = input('Nome do jogo: ')
+        nomeVideogame = input('Nome do videogame: ')
+        cadastrarJogo(arquivo, nomeJogo, nomeVideogame)
+    elif(op == 2): # Listar
+        print('Opção de listar selecionada...')
+        
+        listarArquivo(arquivo)
+    elif(op == 3): # Sair
+        print('Encerrando...')
+        break
