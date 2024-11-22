@@ -85,3 +85,5 @@ Elabore um programa em Python que:
     N. Deve-se apresentar na saída de console uma remoção de um dos contatos e em seguida de uma consulta de todos os contatos, provando que o contato foi removido [EXIGÊNCIA DE SAÍDA DE CONSOLE 6 de 6];
 
 """
+
+print("Bem vindos a lista de contatos da Amanda Mayumi Kado") #Print simples para mostrar quem desenvolveu o sistema

@@ -41,3 +41,5 @@ Elabore um programa em Python que:
     L. Deve-se apresentar na saída de console um pedido com duas opções sabores diferentes e com tamanhos diferentes [EXIGÊNCIA DE SAÍDA DE CONSOLE 4 de 4]; 
 
 """
+
+print("Bem-vindos a Pizzaria da Amanda Mayumi Kado") #Print simples para mostrar quem desenvolveu o sistema

@@ -38,3 +38,6 @@ Elabore um programa em Python que:
     H. Deve-se apresentar na saída de console a utilização do sistema informando uma idade maior ou igual a 29 anos, apresentando na saída de console o valorMensal do plano [EXIGÊNCIA DE SAÍDA DE CONSOLE 2 de 2];
     
 """
+
+print("Sistema desenvolvido por Amanda Mayumi Kado") #Print simples para mostrar quem desenvolveu o sistema
+

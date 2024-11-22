@@ -28,31 +28,31 @@ Elabore um programa em Python que:
 
     A. Deve-se implementar o print com o seu nome completo (somente print, não usar input aqui).
     
-    Por exemplo: print(“Bem-vindos a Madeireira do Lenhador Bruno Kostiuk”) [EXIGÊNCIA DE CÓDIGO 1 de 7];
+        Por exemplo: print(“Bem-vindos a Madeireira do Lenhador Bruno Kostiuk”) [EXIGÊNCIA DE CÓDIGO 1 de 7];
     
     B. Deve-se implementar a função escolha_tipo() que não recebe parâmetros e que: [EXIGÊNCIA DE CÓDIGO 2 de 7];
     
-    a. Pergunta o tipo de madeira desejado;
-    
-    b. Retorna o VALOR do tipo de madeira com base na escolha do usuário (use return);
-    
-    c. Repete a pergunta do item B.a se digitar uma opção diferente de: PIN/PER/MOG/IPE/IMB;
+        a. Pergunta o tipo de madeira desejado;
+        
+        b. Retorna o VALOR do tipo de madeira com base na escolha do usuário (use return);
+        
+        c. Repete a pergunta do item B.a se digitar uma opção diferente de: PIN/PER/MOG/IPE/IMB;
     
     C. Deve-se implementar a função qtd_toras() que não recebe parâmetros e que: [EXIGÊNCIA DE CÓDIGO 3 de 7];
     
-    a. Pergunta a quantidade de toras;
-    
-    b. Retorna (use return) a quantidade de toras E o valor do desconto (os dois valores) seguindo a regra do enunciado;
-    
-    c. Repete a pergunta do item C.a se digitar um valor acima de 2000 ou valor não numérico (use try/except para não numérico)
+        a. Pergunta a quantidade de toras;
+        
+        b. Retorna (use return) a quantidade de toras E o valor do desconto (os dois valores) seguindo a regra do enunciado;
+        
+        c. Repete a pergunta do item C.a se digitar um valor acima de 2000 ou valor não numérico (use try/except para não numérico)
     
     D. Deve-se implementar a função transporte() que não recebe parâmetros e que: [EXIGÊNCIA DE CÓDIGO 4 de 7];
     
-    a. Pergunta pelo serviço adicional de transporte;
-    
-    b. Retorna (use return) o valor de apenas uma das opções de transporte;
-    
-    c. Repetir a pergunta item D.a se digitar uma opção diferente de: 1/2/3;
+        a. Pergunta pelo serviço adicional de transporte;
+        
+        b. Retorna (use return) o valor de apenas uma das opções de transporte;
+        
+        c. Repetir a pergunta item D.a se digitar uma opção diferente de: 1/2/3;
     
     E. Deve-se implementar o total a pagar no código principal (main), ou seja, não pode estar dentro de função, conforme o enunciado [EXIGÊNCIA DE CÓDIGO 5 de 7];
     
@@ -69,3 +69,5 @@ Elabore um programa em Python que:
     K. Deve-se apresentar na saída de console um pedido com opção de tipo de madeira, quantidade de toras e transporte válidos [EXIGÊNCIA DE SAÍDA DE CONSOLE 4 de 4];
 
 """
+
+print("Bem-vindos a Madeireira da Lenhadora Amanda Mayumi Kado") #Print simples para mostrar quem desenvolveu o sistema
