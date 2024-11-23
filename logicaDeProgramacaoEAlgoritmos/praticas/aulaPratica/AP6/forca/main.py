@@ -29,6 +29,8 @@ def mostrar_menu():
     print("2 - SCORE")
     print("3 - SAIR\n")
     print("=" * 30)
+    
+    print("\nDICA: Nome de uma fruta")
 
 arquivo = 'score.txt'
 
@@ -36,7 +38,7 @@ if fH.existeArquivo(arquivo):
     print("Arquivo foi localizado no computador!")
 else:
     print("Arquivo não existe!")
-    fH.criarArquivo(arquivo)
+    fH.criaArquivo(arquivo)
 
 while True:
     mostrar_menu()
@@ -44,8 +46,17 @@ while True:
     
     if opcao == 1:
         print("Iniciar jogo! ")
+        j.jogar()
     elif opcao == 2:
         print("Score: ")
+        dados = fH.listarArquivo("score.txt")
+        if not dados:
+            print("Score vazio")
+        else:
+            i = 1
+            for jogador in dados:
+                print(f"{i} → {jogador[0]}, Pontuação: {jogador[1][:-1]}")
+                i += 1
     elif opcao == 3:
         print("Saindo do jogo... Até mais")
         break
