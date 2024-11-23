@@ -83,4 +83,4 @@ elif(idade >= 59):
     
 # Se valor de idade não é válido executa:
 else:
-    print("A idade informada precisa ser válida!")
+    print("A idade informada precisa ser válida!"
