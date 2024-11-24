@@ -3,15 +3,23 @@ import desenhos as d
 from random import choice
 
 def jogar():
-    lista_palavras = list()
+    lista_palavras = []
     arquivo = fH.abrirArquivoLeitura('palavras.txt')
+    if not arquivo:
+        print("Erro: O arquivo de palavras não foi encontrado ou está vazio.")
+        return
     for linha in arquivo:
         palavra = linha.strip()
         lista_palavras.append(palavra)
-    
+    arquivo.close()
+
+    if not lista_palavras:
+        print("Erro: Nenhuma palavra encontrada no arquivo.")
+        return
+
     palavra_sorteada = choice(lista_palavras)
 
-    for x in range(50):
+    for _ in range(50):
         print()
 
     digitadas = []
@@ -22,30 +30,31 @@ def jogar():
 
     while True:
         adivinha = d.imprimir_palavra_secreta(palavra_sorteada, acertos)
-        
-        #CONDICAO DE VITORIA
+
+        # Condição de vitória
         if adivinha == palavra_sorteada:
             print("Você acertou!!!")
             break
-        #TENTATIVAS
+
+        # Tentativa do jogador
         tentativa = input("\nDigite uma letra: ").lower().strip()
         if tentativa in digitadas:
             print("Você já usou essa letra! ")
             continue
+
+        digitadas.append(tentativa)
+        if tentativa in palavra_sorteada:
+            acertos.append(tentativa)
         else:
-            digitadas += tentativa # ou append
-            if tentativa in palavra_sorteada:
-                acertos += tentativa
-            else:
-                erros += 1
-                print("Errou burro!!")
-                
+            erros += 1
+            print("Errou!")
+
         score = d.desenhar_forca(erros)
-        
-        # CONDICAO FIM DE JOGO
-        if erros == 6: 
-            print(f"Perdeu otário, podre! A palavra era {palavra_sorteada}")
+
+        # Condição de derrota
+        if erros == 6:
+            print(f"Você perdeu! A palavra era {palavra_sorteada}")
             break
-        
-    fH.inserir_score('score.txt', nome, score)
-        
+
+    fH.inserir_dados('score.txt', nome, score)
+

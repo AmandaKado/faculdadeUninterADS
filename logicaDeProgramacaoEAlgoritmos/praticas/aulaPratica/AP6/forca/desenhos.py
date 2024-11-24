@@ -9,12 +9,12 @@ def imprimir_palavra_secreta(palavra, acertos):
     for letra in adivinha:
         print(f"{letra} ", end='')
     print()
-    
+
     return adivinha
 
 def desenhar_forca(erros):
     score = 1000
-    
+
     print("x==:==")
     print("X : ")
     if erros >= 1:
@@ -22,7 +22,7 @@ def desenhar_forca(erros):
         score = 800
     else:
         print("X")
-    
+
     linha2 = ""
     if erros == 2:
         linha2 = "   | "
@@ -33,16 +33,16 @@ def desenhar_forca(erros):
         linha2 = "   /|\ "
         score = 200
     print(f"X{linha2}")
-    
+
     linha3 = ""
     if erros == 5:
-        linha3 += "  / "
+        linha3 = "  / "
         score = 100
     elif erros >= 6:
-        linha3 +- " / \ "
+        linha3 = " / \ "
         score = 0
     print(f"X{linha3}")
-    
+
     print(f"X\n======")
-    
+
     return score

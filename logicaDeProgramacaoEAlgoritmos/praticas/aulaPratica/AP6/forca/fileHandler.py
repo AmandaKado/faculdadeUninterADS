@@ -1,47 +1,41 @@
 def existeArquivo(nomeArquivo):
     try:
-        a = open(nomeArquivo, 'rt')
-        a.close()
+        with open(nomeArquivo, 'rt') as _:
+            pass
     except FileNotFoundError:
         return False
-    else:
-        return True
+    return True
 
 def abrirArquivoLeitura(nomeArquivo):
     try:
-        a = open(nomeArquivo, 'r')
-    except:
-        print("Não foi possível abrir para leitura")
+        arquivo = open(nomeArquivo, 'r')
+    except Exception as e:
+        print(f"Não foi possível abrir para leitura: {e}")
+        return None
     else:
         print(f"Arquivo {nomeArquivo} aberto com sucesso!\n")
-        return a
+        return arquivo
 
 def criarArquivo(nomeArquivo):
     try:
-        a = open(nomeArquivo, 'wt+')
-        a.close()
-    except:
-        print("Erro na criação do arquivo!")
-    else: 
+        with open(nomeArquivo, 'wt+') as _: pass
+    except Exception as e:
+        print(f"Erro na criação do arquivo: {e}")
+    else:
         print(f"Arquivo {nomeArquivo} criado com sucesso! ")
-        
+
 def listarArquivo(nomeArquivo):
     try:
-        a = open(nomeArquivo, 'rt')
-    except:
-        print("Erro ao ler o arquivo")
-    else:
-        dados = a.readLines()
-    finally:
-        a.close()
-        return dados
-    
-def inserir_dados(nomeArquivo):
+        with open(nomeArquivo, 'rt') as arquivo:
+            dados = [linha.strip().split(';') for linha in arquivo.readlines()]
+    except Exception as e:
+        print(f"Erro ao ler o arquivo: {e}")
+        return []
+    return dados
+
+def inserir_dados(nomeArquivo, nomeJogador, score):
     try:
-        a = open(nomeArquivo, 'at')
-    except:
-        print("Erro ao abrir o arquivo!")
-    else:
-        a.write('{};{} \n'.Format(nomeJogador, score))
-    finally:
-        a.close()
+        with open(nomeArquivo, 'at') as arquivo:
+            arquivo.write(f'{nomeJogador};{score}\n')
+    except Exception as e:
+        print(f"Erro ao salvar os dados: {e}")
