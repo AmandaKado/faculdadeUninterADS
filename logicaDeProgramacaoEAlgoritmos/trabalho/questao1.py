@@ -83,4 +83,8 @@ elif(idade >= 59):
     
 # Se valor de idade não é válido executa:
 else:
+<<<<<<< Updated upstream
     print("A idade informada precisa ser válida!"
+=======
+    print("Valor inválido! Encerrando...")
+>>>>>>> Stashed changes
