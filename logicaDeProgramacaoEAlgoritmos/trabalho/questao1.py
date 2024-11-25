@@ -24,7 +24,6 @@ elif idade >= 59:  # Faixa etária acima de 59 anos
 else:
     # Idade inválida, exibe mensagem de erro e finaliza
     print("A idade informada precisa ser válida!")
-    exit()
 
 # Calcula o valor mensal do plano de saúde
 valorMensal = valorBase * porcentagem
