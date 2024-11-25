@@ -38,7 +38,6 @@ elif(idade >= 59):
     porcentagem = 600 / 100
     valorMensal = valorBase * porcentagem
     print(f"O valor mensal do plano é de: R$ {valorMensal:.2f}")
-    
 # Se valor de idade inserido não é válido, executa:
 else:
     print("A idade informada precisa ser válida!")
