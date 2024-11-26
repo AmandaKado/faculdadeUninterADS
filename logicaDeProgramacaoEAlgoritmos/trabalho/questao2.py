@@ -76,14 +76,14 @@ while True:
         else:
             print("Tamanho inválido. Tente novamente.")  # Informa o erro e continua no loop
 
-    if sabor == "PS":
+    if sabor == "PS": # Se o sabor escolhido for salgado, verifica os tamanhos e precifica
         if tamanho == "P":
             preco = 30
         elif tamanho == "M":
             preco = 45
         else:
             preco = 60
-    else:
+    else: # Se o sabor escolhido for doce, verifica os tamanhos e precifica
         if tamanho == "P":
             preco = 34
         elif tamanho == "M":
