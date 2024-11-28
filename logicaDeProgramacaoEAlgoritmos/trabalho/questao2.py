@@ -96,4 +96,8 @@ while True:
     continuar = input("Deseja pedir mais alguma coisa? [S/N]")
     
     if (continuar == "N"):
-        print("")
+        break
+    else:
+        continue
+
+print(f"O valor total a ser pago é: R${valorTotal}")
