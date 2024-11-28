@@ -60,44 +60,46 @@ print(enfeite)
 valorTotal = 0
 
 while True:
-    # Variável para armazenar o sabor escolhido
     while True:  # Loop para garantir uma entrada válida
         sabor = input("Escolha o sabor da pizza (PS para Salgada ou PD para Doce): ").upper() # Função upper para garantir que mesmo que o usuário insira caractere minusculo seja considerado
         if sabor in ["PS", "PD"]:  # Verifica se o sabor está entre os válidos
             break  # Sai do loop se o sabor for válido
         else:
             print("Sabor inválido. Tente novamente.")  # Informa o erro e continua no loop
-
-    # Variável para armazenar o tamanho escolhido
     while True:  # Loop para garantir uma entrada válida
         tamanho = input("Escolha o tamanho da pizza (P, M ou G): ").upper()
         if tamanho in ["P", "M", "G"]:  # Verifica se o tamanho está entre os válidos
             break  # Sai do loop se o tamanho for válido
         else:
             print("Tamanho inválido. Tente novamente.")  # Informa o erro e continua no loop
-
-    if sabor == "PS": # Se o sabor escolhido for salgado, verifica os tamanhos e precifica
-        if tamanho == "P":
-            preco = 30
-        elif tamanho == "M":
-            preco = 45
-        else:
-            preco = 60
-    else: # Se o sabor escolhido for doce, verifica os tamanhos e precifica
-        if tamanho == "P":
-            preco = 34
-        elif tamanho == "M":
-            preco = 48
-        else:
-            preco = 66
             
-    valorTotal += preco
+        if sabor == "PS": # Se o sabor escolhido for salgado, verifica os tamanhos e precifica
+            if tamanho == "P":
+                preco = 30
+            elif tamanho == "M":
+                preco = 45
+            else:
+                preco = 60
+        else: # Se o sabor escolhido for doce, verifica os tamanhos e precifica
+            if tamanho == "P":
+                preco = 34
+            elif tamanho == "M":
+                preco = 48
+            else:
+                preco = 66
 
-    continuar = input("Deseja pedir mais alguma coisa? [S/N]")
+        valorTotal += preco
+
+    continuar = input("Deseja pedir mais alguma coisa? [S/N]: ").upper()
+
+    while True:
+        if (continuar == "N"):
+            break
+        elif (continuar == "S"):
+            break
+        else:
+            print("Responda S para SIM e N para NÃO.")
     
-    if (continuar == "N"):
-        break
-    else:
-        continue
+    break
 
 print(f"O valor total a ser pago é: R${valorTotal}")
