@@ -94,8 +94,6 @@ while True:
     valorTotal += preco
 
     continuar = input("Deseja pedir mais alguma coisa? [S/N]")
-
-    if continuar == "S":
-        continue    
-    else:
-        break
+    
+    if (continuar == "N"):
+        print("")

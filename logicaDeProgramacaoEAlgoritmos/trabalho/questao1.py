@@ -42,7 +42,8 @@ else:
 
     # Idade inválida, exibe mensagem de erro e finaliza 
 
-    print("A idade informada precisa ser válida!") 
+    print("A idade informada precisa ser válida!")
+    exit()
 
 # Calcula o valor mensal do plano de saúde 
 
