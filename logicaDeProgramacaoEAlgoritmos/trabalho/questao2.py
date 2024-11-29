@@ -1,4 +1,4 @@
-# Constantes
+# Váriaveis constantes
 ENFEITE = "*" * 65
 PRECOS = {
     "PS": {"P": 30, "M": 45, "G": 60},
