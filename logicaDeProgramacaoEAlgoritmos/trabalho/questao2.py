@@ -57,49 +57,60 @@ print("----|      G     |  R$ 60.00            |  R$ 66.00         |----")
 print(enfeite)
 
 # Variável acumuladora para somar o total do pedido:
+def realizar_pedido():
+    global valorTotal
+    while True:
+        while True:  # Loop para garantir uma entrada válida
+            sabor = input("Escolha o sabor da pizza (PS para Salgada ou PD para Doce): ").upper() # Função upper para garantir que mesmo que o usuário insira caractere minusculo seja considerado
+            if sabor in ["PS", "PD"]:  # Verifica se o sabor está entre os válidos
+                break  # Sai do loop se o sabor for válido
+            else:
+                print("Sabor inválido. Tente novamente.")  # Informa o erro e continua no loop
+        while True:  # Loop para garantir uma entrada válida
+            tamanho = input("Escolha o tamanho da pizza (P, M ou G): ").upper()
+            if tamanho in ["P", "M", "G"]:  # Verifica se o tamanho está entre os válidos
+                break  # Sai do loop se o tamanho for válido
+            else:
+                print("Tamanho inválido. Tente novamente.")  # Informa o erro e continua no loop
+                
+
+            if sabor == "PS": # Se o sabor escolhido for salgado, verifica os tamanhos e precifica
+                if tamanho == "P":
+                    preco = 30
+                    valorTotal += preco
+                elif tamanho == "M":
+                    preco = 45
+                    valorTotal += preco
+                else:
+                    preco = 60
+                    valorTotal += preco
+            else: # Se o sabor escolhido for doce, verifica os tamanhos e precifica
+                if tamanho == "P":
+                    preco = 34
+                    valorTotal += preco
+                elif tamanho == "M":
+                    preco = 48
+                    valorTotal += preco
+                else:
+                    preco = 66
+                    valorTotal += preco
+
+            
+            
+
+            while True:
+                continuar = input("Deseja pedir mais alguma coisa? [S/N]: ").upper()
+                
+                if (continuar == "S"):
+                    break
+                elif (continuar == "N"):
+                    return
+                else:
+                    print("Responda S para SIM e N para NÃO.")
+            
 valorTotal = 0
 
-while True:
-    while True:  # Loop para garantir uma entrada válida
-        sabor = input("Escolha o sabor da pizza (PS para Salgada ou PD para Doce): ").upper() # Função upper para garantir que mesmo que o usuário insira caractere minusculo seja considerado
-        if sabor in ["PS", "PD"]:  # Verifica se o sabor está entre os válidos
-            break  # Sai do loop se o sabor for válido
-        else:
-            print("Sabor inválido. Tente novamente.")  # Informa o erro e continua no loop
-    while True:  # Loop para garantir uma entrada válida
-        tamanho = input("Escolha o tamanho da pizza (P, M ou G): ").upper()
-        if tamanho in ["P", "M", "G"]:  # Verifica se o tamanho está entre os válidos
-            break  # Sai do loop se o tamanho for válido
-        else:
-            print("Tamanho inválido. Tente novamente.")  # Informa o erro e continua no loop
-            
-        if sabor == "PS": # Se o sabor escolhido for salgado, verifica os tamanhos e precifica
-            if tamanho == "P":
-                preco = 30
-            elif tamanho == "M":
-                preco = 45
-            else:
-                preco = 60
-        else: # Se o sabor escolhido for doce, verifica os tamanhos e precifica
-            if tamanho == "P":
-                preco = 34
-            elif tamanho == "M":
-                preco = 48
-            else:
-                preco = 66
-
-        valorTotal += preco
-
-    continuar = input("Deseja pedir mais alguma coisa? [S/N]: ").upper()
-
-    while True:
-        if (continuar == "N"):
-            break
-        elif (continuar == "S"):
-            break
-        else:
-            print("Responda S para SIM e N para NÃO.")
-    
-    break
+realizar_pedido()
 
 print(f"O valor total a ser pago é: R${valorTotal}")
+
