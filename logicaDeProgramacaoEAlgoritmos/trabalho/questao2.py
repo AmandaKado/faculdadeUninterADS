@@ -21,6 +21,7 @@ def validar_sabor():
         if sabor in ["PS", "PD"]:
             return sabor
         print("Sabor inválido. Tente novamente.")
+        continue
 
 # Função para validar o tamanho
 def validar_tamanho():
@@ -29,6 +30,7 @@ def validar_tamanho():
         if tamanho in ["P", "M", "G"]:
             return tamanho
         print("Tamanho inválido. Tente novamente.")
+        continue
 
 # Função para calcular o preço
 def calcular_preco(sabor, tamanho):
@@ -55,7 +57,13 @@ def realizar_pedido():
         sabor = validar_sabor()
         tamanho = validar_tamanho()
         preco = calcular_preco(sabor, tamanho)
+        
         valor_total += preco
+        
+        if sabor == "PS":
+            print(f"Você pediu uma Pizza salgada, tamanho {tamanho}: R$ {preco:.2f}.")
+        else:
+            print(f"Você pediu uma Pizza doce, tamanho {tamanho}: R$ {preco:.2f}.")
 
         while True:
             continuar = input("Deseja pedir mais alguma coisa? [S/N]: ").upper()
@@ -66,6 +74,7 @@ def realizar_pedido():
                 return
             else:
                 print("Resposta inválida. Responda S ou N.")
+                continue
 
 # Execução do programa
 exibir_menu()
