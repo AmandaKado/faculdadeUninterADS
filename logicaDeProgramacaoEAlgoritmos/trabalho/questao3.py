@@ -70,4 +70,11 @@ Elabore um programa em Python que:
 
 """
 
-print("Bem-vindos a Madeireira da Lenhadora Amanda Mayumi Kado") #Print simples para mostrar quem desenvolveu o sistema
+print("\nBem-vindos a Madeireira da Lenhadora Amanda Mayumi Kado\n") #Print simples para mostrar quem desenvolveu o sistema
+
+# Função de escolha do tipo de madeira desejado
+def escolha_tipo():
+    while True:
+        
+        print(f"Qual o tipo de madeira que deseja comprar? [PIN/PER/MOG/IPE/IMB]")
+        
