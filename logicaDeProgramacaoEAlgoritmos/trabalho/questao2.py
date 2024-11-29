@@ -1,4 +1,3 @@
-# Váriavel constante
 ENFEITE = "*" * 65 
 
 # Função para exibir o menu
