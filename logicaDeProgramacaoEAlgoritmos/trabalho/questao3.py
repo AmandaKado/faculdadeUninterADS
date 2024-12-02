@@ -71,6 +71,40 @@ Elabore um programa em Python que:
 """
 def exibir_desenvolvedor():
     print("\nBem-vindos a Madeireira da Lenhadora Amanda Mayumi Kado\n")
+    
+# Função de escolha do tipo de madeira desejado
+def escolha_tipo():
+    tipos = {
+        "PIN": 150.40,
+        "PER": 160.20,
+        "MOG": 190.90,
+        "IPE": 210.10,
+        "IMB": 220.70
+    }
+    
+    exibir_desenvolvedor()
+    
+    while True:
+        validar_opcao_selecionada("Qual o tipo de madeira que deseja comprar?\n \n→ Tora de Pinho (PIN)  \n→ Tora de Peroba (PER) \n→ Tora de Mogno (MOG) \n→ Tora de Ipê (IPE) \n→ Tora de Imbuia (IMB)\n \nEnvie somente a sigla do tipo de mandeira: ")  
+
+"""
+A Empresa Y opera as vendas da seguinte maneira:
+
+     Tora de Pinho (PIN), o valor do metro cúbico (m³) é de cento e cinquenta reais e quarenta centavos;
+     Tora de Peroba (PER), o valor do metro cúbico (m³) é de cento e setenta reais e vinte centavos;
+     Tora de Mogno (MOG), o valor do metro cúbico (m³) é de cento e noventa reais e noventa centavos;
+     Tora de Ipê (IPE), o valor do metro cúbico (m³) é de duzentos e dez reais e dez centavos;
+     Tora de Imbuia (IMB), o valor do metro cúbico (m³) é de duzentos e vinte reais e setenta centavos;
+     Se a quantidade (em m³) de toras for menor que 100 não há desconto na venda (0/100);
+     Se a quantidade (em m³) de toras for igual ou maior que 100 e menor que 500, o desconto será de 4% (4/100);
+     Se a quantidade (em m³) de toras for igual ou maior que 500 e menor que 1000, o desconto será de 9% (9/100);
+     Se a quantidade (em m³) de toras for igual ou maior que 1000 e menor ou igual que 2000, o desconto será de 16% (16/100);
+     Se a quantidade (em m³) de toras for maior que 2000, não é aceito pedidos com essa quantidade de toras;
+    
+        ♦ Para o adicional de transporte rodoviário (1) é cobrado um valor extra de 1000 reais;
+        ♦ Para o adicional de transporte ferroviário (2) é cobrado um valor extra de 2000 reais;
+        ♦ Para o adicional de transporte hidroviário (3) é cobrado um valor extra de 2500 reais;
+"""
 
 def validar_opcao_selecionada(prompt):
     try:
@@ -80,25 +114,6 @@ def validar_opcao_selecionada(prompt):
         else:
             return prompt.upper()
     except:
-        print("Entrada inválida! Por favor insira um tipo existente: ")
+        print("Entrada inválida! Por favor insira um tipo existente: ")    
 
-
-# Função de escolha do tipo de madeira desejado
-def escolha_tipo():
-    tipos = {
-        "PIN": 100.00,
-        "PER": 100.00,
-        "MOG": 100.00,
-        "IPE": 100.00,
-        "IMB": 100.00
-    }
-    
-    exibir_desenvolvedor()
-    
-    while True:    
-        validar_opcao_selecionada("Qual o tipo de madeira que deseja comprar? [PIN/PER/MOG/IPE/IMB] ")  
-        
-        
 escolha_tipo()
-
-print(f"Total à pagar: {}")
