@@ -69,12 +69,36 @@ Elabore um programa em Python que:
     K. Deve-se apresentar na saída de console um pedido com opção de tipo de madeira, quantidade de toras e transporte válidos [EXIGÊNCIA DE SAÍDA DE CONSOLE 4 de 4];
 
 """
+def exibir_desenvolvedor():
+    print("\nBem-vindos a Madeireira da Lenhadora Amanda Mayumi Kado\n")
 
-print("\nBem-vindos a Madeireira da Lenhadora Amanda Mayumi Kado\n") #Print simples para mostrar quem desenvolveu o sistema
+def validar_opcao_selecionada(prompt):
+    try:
+        input(prompt)
+        if prompt != "PIN" | prompt != "PER" | prompt != "MOG" | prompt != "IPE" | prompt != "IMB":
+            print("\nInsira um tipo de madeira válido!\n")
+        else:
+            return prompt.upper()
+    except:
+        print("Entrada inválida! Por favor insira um tipo existente: ")
+
 
 # Função de escolha do tipo de madeira desejado
 def escolha_tipo():
-    while True:
+    tipos = {
+        "PIN": 100.00,
+        "PER": 100.00,
+        "MOG": 100.00,
+        "IPE": 100.00,
+        "IMB": 100.00
+    }
+    
+    exibir_desenvolvedor()
+    
+    while True:    
+        validar_opcao_selecionada("Qual o tipo de madeira que deseja comprar? [PIN/PER/MOG/IPE/IMB] ")  
         
-        print(f"Qual o tipo de madeira que deseja comprar? [PIN/PER/MOG/IPE/IMB]")
         
+escolha_tipo()
+
+print(f"Total à pagar: {}")
