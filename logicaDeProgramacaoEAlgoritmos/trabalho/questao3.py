@@ -87,25 +87,6 @@ def escolha_tipo():
     while True:
         validar_opcao_selecionada("Qual o tipo de madeira que deseja comprar?\n \n→ Tora de Pinho (PIN)  \n→ Tora de Peroba (PER) \n→ Tora de Mogno (MOG) \n→ Tora de Ipê (IPE) \n→ Tora de Imbuia (IMB)\n \nEnvie somente a sigla do tipo de mandeira: ")  
 
-"""
-A Empresa Y opera as vendas da seguinte maneira:
-
-     Tora de Pinho (PIN), o valor do metro cúbico (m³) é de cento e cinquenta reais e quarenta centavos;
-     Tora de Peroba (PER), o valor do metro cúbico (m³) é de cento e setenta reais e vinte centavos;
-     Tora de Mogno (MOG), o valor do metro cúbico (m³) é de cento e noventa reais e noventa centavos;
-     Tora de Ipê (IPE), o valor do metro cúbico (m³) é de duzentos e dez reais e dez centavos;
-     Tora de Imbuia (IMB), o valor do metro cúbico (m³) é de duzentos e vinte reais e setenta centavos;
-     Se a quantidade (em m³) de toras for menor que 100 não há desconto na venda (0/100);
-     Se a quantidade (em m³) de toras for igual ou maior que 100 e menor que 500, o desconto será de 4% (4/100);
-     Se a quantidade (em m³) de toras for igual ou maior que 500 e menor que 1000, o desconto será de 9% (9/100);
-     Se a quantidade (em m³) de toras for igual ou maior que 1000 e menor ou igual que 2000, o desconto será de 16% (16/100);
-     Se a quantidade (em m³) de toras for maior que 2000, não é aceito pedidos com essa quantidade de toras;
-    
-        ♦ Para o adicional de transporte rodoviário (1) é cobrado um valor extra de 1000 reais;
-        ♦ Para o adicional de transporte ferroviário (2) é cobrado um valor extra de 2000 reais;
-        ♦ Para o adicional de transporte hidroviário (3) é cobrado um valor extra de 2500 reais;
-"""
-
 def validar_opcao_selecionada(prompt):
     try:
         input(prompt)
