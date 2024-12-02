@@ -71,30 +71,27 @@ Elabore um programa em Python que:
 """
 def exibir_desenvolvedor():
     print("\nBem-vindos a Madeireira da Lenhadora Amanda Mayumi Kado\n")
-    
-# Função de escolha do tipo de madeira desejado
+
 def escolha_tipo():
     tipos = {
         "PIN": 150.40,
-        "PER": 160.20,
+        "PER": 170.20,
         "MOG": 190.90,
         "IPE": 210.10,
         "IMB": 220.70
     }
     
-    exibir_desenvolvedor()
-    
+# Função de escolha do tipo de madeira desejado
     while True:
-        validar_opcao_selecionada("Qual o tipo de madeira que deseja comprar?\n \n→ Tora de Pinho (PIN)  \n→ Tora de Peroba (PER) \n→ Tora de Mogno (MOG) \n→ Tora de Ipê (IPE) \n→ Tora de Imbuia (IMB)\n \nEnvie somente a sigla do tipo de mandeira: ")  
+        print("\nTipos de madeira disponíveis:")
+        print("\n→ Tora de Pinho (PIN)")
+        print("→ Tora de Peroba (PER)")
+        print("→ Tora de Mogno (MOG)")
+        print("→ Tora de Ipê (IPE)")
+        print("→ Tora de Imbuia (IMB)\n")
+        escolha = input("Envie somente a sigla do tipo de madeira: ").strip().upper()
 
-def validar_opcao_selecionada(prompt):
-    try:
-        input(prompt)
-        if prompt != "PIN" | prompt != "PER" | prompt != "MOG" | prompt != "IPE" | prompt != "IMB":
-            print("\nInsira um tipo de madeira válido!\n")
+        if escolha in tipos:
+            return tipos[escolha]  # Retorna o valor correspondente ao tipo escolhido
         else:
-            return prompt.upper()
-    except:
-        print("Entrada inválida! Por favor insira um tipo existente: ")    
-
-escolha_tipo()
+            print("\nInsira um tipo de madeira válido!")
