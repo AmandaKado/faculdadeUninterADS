@@ -85,5 +85,18 @@ Elabore um programa em Python que:
     N. Deve-se apresentar na saída de console uma remoção de um dos contatos e em seguida de uma consulta de todos os contatos, provando que o contato foi removido [EXIGÊNCIA DE SAÍDA DE CONSOLE 6 de 6];
 
 """
+def exibir_desenvolvedor():
+    print("\nBem vindos a lista de contatos da Amanda Mayumi Kado!\n")
 
-print("Bem vindos a lista de contatos da Amanda Mayumi Kado") #Print simples para mostrar quem desenvolveu o sistema
+def exibir_menu(): 
+    print("1) Cadastrar Contato")
+    print("2) Consultar Contato")
+    print(" 1. Consultar Todos")
+    print(" 2. Consultar por Id")
+    print(" 3. Consultar por Atividade")
+    print(" 4. Retornar ao menu")
+    print("3) Remover Contato")
+    print("4) Encerrar Programa\n")
+    
+exibir_desenvolvedor()
+exibir_menu()
