@@ -39,7 +39,7 @@ def main():
     exibir_desenvolvedor()
 
     # Entrada dos dados
-    valor_base = validar_numero("Insira o valor base do plano: ", float, 0)
+    valor_base = validar_numero("Insira o valor base do plano: R$ ", float, 0)
     idade = validar_numero("Idade do cliente: ", int, 0)
 
     # Cálculo do valor mensal

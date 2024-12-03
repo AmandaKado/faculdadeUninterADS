@@ -2,6 +2,7 @@ def exibir_desenvolvedor():
     print("\nBem-vindos a Madeireira da Lenhadora Amanda Mayumi Kado\n")
 
 def escolha_tipo():
+    # Dicionário com preços das madeiras
     tipos = {
         "PIN": 150.40,
         "PER": 170.20,
@@ -10,76 +11,78 @@ def escolha_tipo():
         "IMB": 220.70
     }
     
-# Função de escolha do tipo de madeira desejado
+    # Solicita o tipo de madeira até que o usuário escolha uma opção válida
     while True:
-        print("\nTipos de madeira disponíveis:")
-        print("\n→ Tora de Pinho (PIN)")
-        print("→ Tora de Peroba (PER)")
-        print("→ Tora de Mogno (MOG)")
-        print("→ Tora de Ipê (IPE)")
-        print("→ Tora de Imbuia (IMB)\n")
-        escolha = input("Envie somente a sigla do tipo de madeira: ").strip().upper()
+        print("\nEntre com o tipo de madeira desejado:")
+        print("\nPIN → Tora de Pinho")
+        print("PER → Tora de Peroba")
+        print("MOG → Tora de Mogno")
+        print("IPE → Tora de Ipê")
+        print("IMB → Tora de Imbuia\n")
+        escolha = input(">> ").strip().upper()
 
         if escolha in tipos:
-            return tipos[escolha]  # Retorna o valor correspondente ao tipo escolhido
+            return tipos[escolha]  # Retorna o preço da madeira escolhida
         else:
-            print("\nInsira um tipo de madeira válido!")
+            print("\nEscolha inválida, entre com o modelo novamente!")
 
 def qtd_toras():
+    # Solicita a quantidade de toras e aplica o desconto baseado na quantidade
     while True:
-        metroQuadrado = float(input("Quantidade de toras: "))
         try:
-            if metroQuadrado < 100:
-                return metroQuadrado
-                desconto = 0 / 100
-                break
-            elif metroQuadrado >= 100 and metroQuadrado < 500:
-                return metroQuadrado
-                desconto = 4 / 100
-                break
-            elif metroQuadrado >= 500 and metroQuadrado < 1000:
-                return metroQuadrado
-                desconto = 9 / 100
-                break
-            elif metroQuadrado >= 1000 and metroQuadrado < 2000:
-                return metroQuadrado
-                desconto = 16 / 100
-                break
-            elif metroQuadrado < 2000:
-                print("Não é aceito pedidos acima de 2000 m³! \n")
+            qtd = float(input("Entre com a quantidade de toras (m³): "))
+            if qtd > 2000:
+                print("Não aceitamos pedidos com essa quantidade de toras!\nPor favor entre com a quantidade novamente.\n")
+            elif qtd >= 1000:
+                return qtd, 16 / 100 # Desconto de 16% para quantidades >= 1000
+            elif qtd >= 500:
+                return qtd, 9 / 100 # Desconto de 9% para quantidades >= 500
+            elif qtd >= 100:
+                return qtd, 4 / 100 # Desconto de 4% para quantidades >= 100
+            elif qtd > 0:
+                return qtd, 0 / 100 # Sem desconto para quantidades < 100
             else:
-                print("Valor inválido! Selecione uma quantidade de toras válida. \n")
-                continue
+                print("Quantidade inválida. Tente novamente.\n")
         except ValueError:
-            print("Valor inserido não válido! \n")
+            print("Valor inserido não é numérico! Tente novamente.\n")
 
 def transporte():
-    deseja_transporte = input("Deseja serviço de transporte? [S/N] ").STR().upper()
-    if deseja_transporte == "S":
-        try:
-            print("Opções de transporte: \ntransporte rodoviário (1)\ntransporte ferroviário (2)\ntransporte hidroviário (3)\n")
-            
-            selecao_transporte = int(input("Digite apenas o número para escolher o método de transporte: [1, 2, 3] "))
-            
-            if selecao_transporte == 1:
-                valor_transporte = 1000
-                return selecao_transporte 
-            elif selecao_transporte == 2:
-                valor_transporte = 2000
-                return selecao_transporte 
-            elif selecao_transporte == 3:
-                valor_transporte = 3500
-                return selecao_transporte 
-            else:
-                print("Valor inválido! \n")
-        except:
-            print("Insira um valor numérico! ")
-    else:
-        return None
-
-def principal():
-    exibir_desenvolvedor()
-    escolha_tipo()
-    qtd_toras()
+    # Dicionário com preços dos tipos de transporte
+    opcoes = {
+        1: 1000,
+        2: 2000,
+        3: 2500
+    }
     
-principal()
+    # Solicita a escolha do tipo de transporte até que seja válida
+    while True:
+        print("\nEscolha o tipo de Transporte: ")
+        print("\n1 → Rodoviário - R$ 1000")
+        print("2 → Ferroviário - R$ 2000")
+        print("3 → Hidroviário - R$ 2500\n")
+        try:
+            escolha = int(input(">>  "))
+            if escolha in opcoes:
+                return opcoes[escolha] # Retorna o valor do transporte escolhido
+            else:
+                print("Opção inválida. Tente novamente.\n")
+        except ValueError:
+            print("Insira um número válido (1, 2 ou 3).\n")
+
+# Código principal:
+
+# Chama função de exibir nome do desenvolvedor
+exibir_desenvolvedor()
+
+# Chama as funções para escolher tipo de madeira, quantidade de toras e tipo de transporte
+preco_madeira = escolha_tipo()
+quantidade, desconto = qtd_toras()
+valor_transporte = transporte()
+
+# Calcula o total a pagar considerando preço da madeira, desconto e valor do transporte
+subtotal = preco_madeira * quantidade
+valor_com_desconto = subtotal * (1 - desconto)
+total = valor_com_desconto + valor_transporte
+
+# Exibe total
+print(f"→ Total a pagar: R$ {total:.2f}")
