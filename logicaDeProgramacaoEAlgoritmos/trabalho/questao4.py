@@ -15,19 +15,14 @@ def exibir_menu():
             match resposta:
                 case 1:
                     print("1")
-                    break
                 case 2: 
                     print("2")
-                    break
                 case 3: 
                     print("3")
-                    break
                 case 4:
                     print("4")
-                    break
                 case _:
                     print("\nValor inválido! Insira um número válido\n")
-                    continue
         except ValueError:
             print("Insira um número de 1 à 4!\n")
             continue
