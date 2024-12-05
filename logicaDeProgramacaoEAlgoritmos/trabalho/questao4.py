@@ -8,19 +8,20 @@ def exibir_menu():
     print("3) Remover Contato")
     print("4) Encerrar Programa\n")
     
-    resposta = int(input(">> "))
+    resposta = int(input("Envie somente o número [1, 2, 3, 4] >> "))
     
     try:
-        if resposta == 1:
-            print("\nFoi escolhido o numero 1\n")
-        elif resposta == 2:
-            print("\nFoi escolhido o numero 2\n")
-        elif resposta == 3:
-            print("\nFoi escolhido o numero 3\n")
-        elif resposta == 4:
-            print("\nFoi escolhido o numero 4\n")
-        else:
-            print("\nValor inserido inválido! Envie um número de 1 à 4 de acordo com a opção desejada.\n")
+        match resposta:
+            case 1:
+                print("1")
+            case 2: 
+                print("2")
+            case 3: 
+                print("3")
+            case 4:
+                print("4")
+            case _:
+                print("\nValor inválido! Insira um número válido\n")
     except ValueError:
         print("Insira um número de 1 à 4!\n")
     
