@@ -1,5 +1,5 @@
 def exibir_desenvolvedor():
-    print("\nBem vindos a lista de contatos da Amanda Mayumi Kado!\n")
+    print("\nBem-vindos à lista de contatos da Amanda Mayumi Kado!\n")
 
 # Função para exibir menu
 def exibir_menu(): 
@@ -9,26 +9,27 @@ def exibir_menu():
         print("3) Remover Contato")
         print("4) Encerrar Programa\n")
         
-        resposta = int(input("Envie somente o número [1, 2, 3, 4] >> "))
-        
         try:
+            # Tenta converter a entrada para número inteiro
+            resposta = int(input("Envie somente o número [1, 2, 3, 4] >> "))
+            
+            # Avalia a opção usando match-case
             match resposta:
                 case 1:
-                    print("1")
+                    print("Você escolheu: Cadastrar Contato")
                 case 2: 
-                    print("2")
+                    print("Você escolheu: Consultar Contato")
                 case 3: 
-                    print("3")
+                    print("Você escolheu: Remover Contato")
                 case 4:
-                    print("4")
-                case _:
+                    print("Encerrando programa...")
+                    break  # Sai do loop e encerra o programa
+                case _:  # Caso para valores fora do intervalo esperado
                     print("\nValor inválido! Insira um número válido\n")
-        except ValueError:
-            print("Insira um número de 1 à 4!\n")
-            continue
-        break
+        except ValueError:  # Trata erro ao converter entrada para inteiro
+            print("Erro: Insira um número válido de 1 a 4!\n")
+            continue  # Reinicia o loop para pedir uma nova entrada
 
-# Código principal para execuução do programa
+# Código principal para execução do programa
 exibir_desenvolvedor()
-
 exibir_menu()
