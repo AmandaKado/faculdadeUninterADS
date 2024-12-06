@@ -1,3 +1,4 @@
+# Função para exibir o nome do desenvolvedor
 def exibir_desenvolvedor():
     print("\nBem-vindos à lista de contatos da Amanda Mayumi Kado!\n")
 
@@ -17,10 +18,13 @@ def exibir_menu():
             match resposta:
                 case 1:
                     print("Você escolheu: Cadastrar Contato")
+                    break
                 case 2: 
                     print("Você escolheu: Consultar Contato")
+                    break
                 case 3: 
                     print("Você escolheu: Remover Contato")
+                    break
                 case 4:
                     print("Encerrando programa...")
                     break  # Sai do loop e encerra o programa
