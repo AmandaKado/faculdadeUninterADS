@@ -2,21 +2,18 @@
 def exibir_desenvolvedor():
     print("\nBem-vindos à lista de contatos da Amanda Mayumi Kado!\n")
 
-lista_contatos = [""]
+lista_contatos = []
 id_global = 5069371
 
 # Função para cadastrar contato
 def cadastrar_contato(id):
-    nome = input("Nome: ")
-    atividade = input("Atividade: ")
-    telefone = int(input("Telefone: "))
-
-    # Armazena os dados inseridos dentro de um dicionário
-    contato = {id, nome, atividade, telefone}
+    nome = input("Informe o nome do contato: ")
+    atividade = input("Informe a atividade do contato: ")
+    telefone = input("Informe o telefone do contato: ")
+    contato = {"id": id, "nome": nome, "atividade": atividade, "telefone": telefone}
+    lista_contatos.append(contato.copy())
+    print("Contato cadastrado com sucesso!")
     
-    # Copia os dados do dicionario para a variável lista_contatos
-    lista_contatos.copy(contato)
-
 # Função para exibir menu
 def exibir_menu(): 
     while True:
